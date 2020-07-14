@@ -25,3 +25,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: Helm Chart Releaser
       uses: helm/chart-releaser-action@v1.0.0-rc.2
+      env:
+          CR_TOKEN: "${{ secrets.CR_TOKEN }}"

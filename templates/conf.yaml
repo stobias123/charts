@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mangos_zero.fullname" . }}-mangosd-conf
+data:
+  mangos.conf.dist: |-
+{{ .Files.Get "conf/mangosd.conf.dist" | indent 4}}
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mangos_zero.fullname" . }}-realmd-conf
+data: 
+  realmd.conf.dist: |-
+{{ .Files.Get "conf/realmd.conf.dist" | indent 4}}
